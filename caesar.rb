@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 def is_uppercase(char)
   char.ord > 64 && char.ord < 91
 end
@@ -7,19 +9,17 @@ def is_lowercase(char)
 end
 
 def is_letter(char)
-  (is_lowercase(char)) || (is_uppercase(char))
+  is_lowercase(char) || is_uppercase(char)
 end
 
 def shift_char(char, factor)
   ascii = char.ord + factor
-  if (is_lowercase(char) && ascii > 122) || (is_uppercase(char) && ascii > 90)
-    ascii -= 26
-  end
+  ascii -= 26 if (is_lowercase(char) && ascii > 122) || (is_uppercase(char) && ascii > 90)
   ascii
 end
 
 def caesar_cipher(string, factor)
-  result = ""
+  result = ''
   arr = string.chars
   arr.each do |char|
     if is_letter(char)
@@ -32,4 +32,4 @@ def caesar_cipher(string, factor)
   puts result
 end
 
-caesar_cipher("What a string!", 5)
+caesar_cipher('What a string!', 5)

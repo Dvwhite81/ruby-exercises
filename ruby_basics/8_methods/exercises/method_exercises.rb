@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Since lesson #8 is on methods, you will be writing the entire method.
 # To gain more familiarity, look up the documentation for each hint.
 # Remember to unskip the corresponding tests one at a time.
@@ -9,7 +11,6 @@
 def ascii_translator(number)
   number.chr
 end
-
 
 # method name: #common_sports
 # parameters: current_sports and favorite_sports (both arrays)
@@ -40,9 +41,8 @@ end
 # explicit return value: 'Input Error' if character's length does not equal 1
 # hint: use String#ord
 def ascii_code(character)
-  unless character.length == 1
-    return "Input Error"
-  end
+  return 'Input Error' unless character.length == 1
+
   character.ord
 end
 
@@ -53,23 +53,21 @@ end
 # console output: if animal is 'dog', 'Dogs are paw-some!' (awesome)
 # console output: otherwise, "I think <animal>s have pet-tential!" (potential)
 # hint: use puts
-=begin
-def pet_pun(animal)
-  if animal == "cat"
-    puts "Cats are purr-fect!"
-  elsif animal == "dog"
-    puts "Dogs are paw-some!"
-  else
-    puts "I think #{animal}s have pet-tential!"
-  end
-end
-=end
+# def pet_pun(animal)
+#   if animal == "cat"
+#     puts "Cats are purr-fect!"
+#   elsif animal == "dog"
+#     puts "Dogs are paw-some!"
+#   else
+#     puts "I think #{animal}s have pet-tential!"
+#   end
+# end
 def pet_pun(animal)
   case animal
-  when "cat"
-    puts "Cats are purr-fect!"
-  when "dog"
-    puts "Dogs are paw-some!"
+  when 'cat'
+    puts 'Cats are purr-fect!'
+  when 'dog'
+    puts 'Dogs are paw-some!'
   else
     puts "I think #{animal}s have pet-tential!"
   end
